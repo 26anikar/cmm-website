@@ -3,7 +3,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 const root=path.resolve('dist');
 const base='/cmm-website';
-const types={'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.jpg':'image/jpeg','.png':'image/png','.gif':'image/gif','.webp':'image/webp','.pdf':'application/pdf','.svg':'image/svg+xml'};
+const types={'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.jpg':'image/jpeg','.png':'image/png','.gif':'image/gif','.webp':'image/webp','.woff2':'font/woff2','.pdf':'application/pdf','.svg':'image/svg+xml'};
 http.createServer(async(req,res)=>{
   let pathname=decodeURIComponent(new URL(req.url,'http://localhost').pathname);
   if(pathname===base){res.writeHead(302,{Location:base+'/'});res.end();return;}

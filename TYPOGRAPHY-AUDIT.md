@@ -8,17 +8,25 @@ Compared all 35 original pages with the migrated site at a 1440px browser width.
 
 This is a comparison of HTML page content and image display sizes. The typography inside the original downloadable PDFs was not changed. Browser-rendered font declarations are recorded; operating systems may render the system font with slightly different glyph metrics.
 
+## Heading and navigation follow-up
+
+A subsequent comparison of the Problem Archive identified that retaining Georgia did not match the original heading style closely enough. The heading-family decision below supersedes the initial two-font redesign. The archive title now uses the original Raleway at 72px on a 1440px viewport, and year-card headings use Raleway at the original 25px. Competition detail titles use the original 45px desktop scale.
+
+Original navigation and dropdown text measured 16px, compared with 13px in the first migration. Both are now 16px, dropdown panels are wider, and links have at least 44px-tall click targets. The mobile menu appears below 1181px so enlarged labels do not crowd the header. Checks cover 1440, 1181, 1180, 1024, 390, and 320px widths.
+
 ## Overall assessment
 
-The new font pairing is consistent and appropriate for the simpler responsive layout selected for the migration. The original mixes Raleway, Avenir variants, Bitter variants, Sora, DIN Next, Kanit, Futura variants, and Helvetica. The new site uses Georgia for page/section headings and the operating system's sans-serif font for body copy, tables, navigation, and smaller headings.
+The original mixes Raleway, Avenir variants, Bitter variants, Sora, DIN Next, Kanit, Futura variants, and Helvetica. The current site restores Raleway for interior page titles and most headings, Bitter for the Rules, Payment Instructions, and Integration Bee section headings, and Sora for homepage headings. These three fonts are hosted locally with their licenses. Body copy, tables, and navigation retain the operating system's sans-serif font. Original Futura and Kanit subsection styles are normalized to Raleway rather than reproduced exactly.
 
-An exact font match was not the aim of the approved redesign. The important corrections are to retain the original distinctions between headings, body copy, and emphasized instructions. The first import had removed some of those distinctions when stripping inline styles.
+Responsive sizing and the simpler layout remain. Heading families now follow the original much more closely, while body typography stays consistent. The first import had also removed some distinctions between headings, body copy, and emphasized instructions when stripping inline styles; those corrections remain in place.
 
 | Content role | Original examples | Current treatment |
 | --- | --- | --- |
-| Page titles | Approximately 40–110px across pages | Consistent responsive Georgia titles; interior pages 70.4px at 1440px and 43.2px at 390px |
-| Section headings | Usually 28–50px; some were styled paragraphs | Semantic `h2` headings, 40px desktop / 28.8px mobile |
-| Smaller subsections | Usually 20–40px | Sans-serif `h3`, 22.4px |
+| Page titles | Approximately 40–110px across pages | Raleway; most interior pages 72px at 1440px and 43.2px at 390px; competition detail/TCS titles 45px desktop / 32px mobile. Homepage uses Sora. |
+| Section headings | Usually 28–50px; some were styled paragraphs | Raleway or Bitter according to the original page; semantic `h2`, 40px desktop / 28.8px mobile |
+| Smaller subsections | Usually 20–40px | Raleway `h3`, 22.4px; homepage uses Sora |
+| Archive year links/cards | Raleway, 25px | Raleway, 25px |
+| Main navigation and dropdowns | 16px Avenir | 16px system sans-serif; wider panels and larger click targets |
 | Running body text | Usually 15–20px, with several oversized introductions | 17px desktop / 16px mobile; consistent family and line spacing |
 | Registration date and opening period | 35px bold | 20px bold summary paragraphs, visibly distinct without competing with the title |
 | Archive download links | 16px | Restored to 16px from the initial 14px table default |
