@@ -43,3 +43,11 @@ The user selected a simpler responsive layout. This version replaces Wix positio
 - `npm run test:browser`: all 35 pages checked at 1440px and 390px, including image decoding and navigation, without horizontal page overflow or JavaScript errors.
 - Source-page links were compared with imported links; every destination was retained.
 - Source tables were compared with imported tables; all 19 were retained.
+
+### Final similarity review
+
+- Compared all 35 source pages with the imported content: all 59 long paragraphs checked, all 19 tables' cell values, and 230 source link occurrences were retained.
+- Verified 147 archive download links against their visually positioned Tests, Solutions, Qualifying Test, or Finals headings on the original 17 archive pages; no category mismatches were found.
+- Downloaded all 176 PDFs from both the original host and GitHub Pages and compared SHA-256 hashes against the local originals. Every file matched byte for byte.
+- Reviewed sponsor artwork and restored a dark red backdrop behind both white Citadel logos, matching the original's contrast without changing the artwork.
+- Heading families, hierarchy, and dropdown sizing are documented in `TYPOGRAPHY-AUDIT.md`. The responsive layout, light color theme, and system body font remain intentional differences from Wix.
