@@ -1,0 +1,183 @@
+{
+  "name": "Caltech Math Meet",
+  "url": "https://26anikar.github.io/cmm-website",
+  "logo": "/assets/images/006423_fe3da1d2eb624fe79561a2e93104d74a~mv2.gif",
+  "favicon": "/assets/images/006423_b596cc7cfa6a4ba698d4abd56115a62b~mv2.jpg",
+  "pages": [
+    {
+      "slug": "",
+      "title": "Caltech Math Meet | CMM",
+      "source": "https://www.caltechmathmeet.org"
+    },
+    {
+      "slug": "admissions-events",
+      "title": "Admissions Events | Caltech Math Meet",
+      "source": "https://www.caltechmathmeet.org/admissions-events"
+    },
+    {
+      "slug": "contact",
+      "title": "Contact | Caltech Math Meet",
+      "source": "https://www.caltechmathmeet.org/contact"
+    },
+    {
+      "slug": "discord",
+      "title": "Join The Discord! | Caltech Math Meet",
+      "source": "https://www.caltechmathmeet.org/discord"
+    },
+    {
+      "slug": "faculty-lecture",
+      "title": "Faculty Lecture | Caltech Math Meet",
+      "source": "https://www.caltechmathmeet.org/faculty-lecture"
+    },
+    {
+      "slug": "friday-night-event",
+      "title": "Friday Night Event | Caltech Math Meet",
+      "source": "https://www.caltechmathmeet.org/friday-night-event"
+    },
+    {
+      "slug": "guest-speaker",
+      "title": "Math Talk | Caltech Math Meet",
+      "source": "https://www.caltechmathmeet.org/guest-speaker"
+    },
+    {
+      "slug": "integration-bee",
+      "title": "Integration Bee | Caltech Math Meet",
+      "source": "https://www.caltechmathmeet.org/integration-bee"
+    },
+    {
+      "slug": "payment-instructions",
+      "title": "Payment Instructions | Caltech Math Meet",
+      "source": "https://www.caltechmathmeet.org/payment-instructions"
+    },
+    {
+      "slug": "problems",
+      "title": "Problems | Caltech Math Meet",
+      "source": "https://www.caltechmathmeet.org/problems"
+    },
+    {
+      "slug": "problems/2010-fall",
+      "title": "CHMMC 2010 Fall Problems | Caltech Math Meet",
+      "source": "https://www.caltechmathmeet.org/problems/2010-fall"
+    },
+    {
+      "slug": "problems/2010-winter",
+      "title": "CHMMC 2010 Winter Problems | Caltech Math Meet",
+      "source": "https://www.caltechmathmeet.org/problems/2010-winter"
+    },
+    {
+      "slug": "problems/2012-fall",
+      "title": "CHMMC 2012 Fall Problems | Caltech Math Meet",
+      "source": "https://www.caltechmathmeet.org/problems/2012-fall"
+    },
+    {
+      "slug": "problems/2012-spring",
+      "title": "CHMMC 2012 Spring Problems | Caltech Math Meet",
+      "source": "https://www.caltechmathmeet.org/problems/2012-spring"
+    },
+    {
+      "slug": "problems/2013-fall",
+      "title": "CHMMC 2013 Fall Problems | Caltech Math Meet",
+      "source": "https://www.caltechmathmeet.org/problems/2013-fall"
+    },
+    {
+      "slug": "problems/2014-fall",
+      "title": "CHMMC 2014 Fall Problems | Caltech Math Meet",
+      "source": "https://www.caltechmathmeet.org/problems/2014-fall"
+    },
+    {
+      "slug": "problems/2015-fall",
+      "title": "CHMMC 2015 Fall Problems | Caltech Math Meet",
+      "source": "https://www.caltechmathmeet.org/problems/2015-fall"
+    },
+    {
+      "slug": "problems/2016-fall",
+      "title": "CHMMC 2016 Fall Problems | Caltech Math Meet",
+      "source": "https://www.caltechmathmeet.org/problems/2016-fall"
+    },
+    {
+      "slug": "problems/2017-fall",
+      "title": "CHMMC 2017 Fall Problems | Caltech Math Meet",
+      "source": "https://www.caltechmathmeet.org/problems/2017-fall"
+    },
+    {
+      "slug": "problems/2018-fall",
+      "title": "CHMMC 2018 Fall Problems | Caltech Math Meet",
+      "source": "https://www.caltechmathmeet.org/problems/2018-fall"
+    },
+    {
+      "slug": "problems/2019-fall",
+      "title": "CHMMC 2019 Fall Problems | Caltech Math Meet",
+      "source": "https://www.caltechmathmeet.org/problems/2019-fall"
+    },
+    {
+      "slug": "problems/2020-winter",
+      "title": "CHMMC 2020 Winter Problems | Caltech Math Meet",
+      "source": "https://www.caltechmathmeet.org/problems/2020-winter"
+    },
+    {
+      "slug": "problems/2021-winter",
+      "title": "CHMMC 2021 Winter Problems | Caltech Math Meet",
+      "source": "https://www.caltechmathmeet.org/problems/2021-winter"
+    },
+    {
+      "slug": "problems/2022-winter",
+      "title": "CHMMC 2022 Winter Problems | Caltech Math Meet",
+      "source": "https://www.caltechmathmeet.org/problems/2022-winter"
+    },
+    {
+      "slug": "problems/2024",
+      "title": "CMM 2024 Problems | Caltech Math Meet",
+      "source": "https://www.caltechmathmeet.org/problems/2024"
+    },
+    {
+      "slug": "problems/cmm-2025-problems",
+      "title": "CMM 2025 Problems | Caltech Math Meet",
+      "source": "https://www.caltechmathmeet.org/problems/cmm-2025-problems"
+    },
+    {
+      "slug": "problems/cmm-2026-problems",
+      "title": "CMM 2026 Problems | Caltech Math Meet",
+      "source": "https://www.caltechmathmeet.org/problems/cmm-2026-problems"
+    },
+    {
+      "slug": "puzzle-hunt",
+      "title": "Puzzle Hunt | Caltech Math Meet",
+      "source": "https://www.caltechmathmeet.org/puzzle-hunt"
+    },
+    {
+      "slug": "registration",
+      "title": "Registration | Caltech Math Meet",
+      "source": "https://www.caltechmathmeet.org/registration"
+    },
+    {
+      "slug": "resources",
+      "title": "Resources | Caltech Math Meet",
+      "source": "https://www.caltechmathmeet.org/resources"
+    },
+    {
+      "slug": "results",
+      "title": "Results | Caltech Math Meet",
+      "source": "https://www.caltechmathmeet.org/results"
+    },
+    {
+      "slug": "rules",
+      "title": "Rules | Caltech Math Meet",
+      "source": "https://www.caltechmathmeet.org/rules"
+    },
+    {
+      "slug": "scheduling",
+      "title": "Schedule | Caltech Math Meet",
+      "source": "https://www.caltechmathmeet.org/scheduling"
+    },
+    {
+      "slug": "sponsors",
+      "title": "Sponsors | Caltech Math Meet",
+      "source": "https://www.caltechmathmeet.org/sponsors"
+    },
+    {
+      "slug": "tcs-round",
+      "title": "TCS Round | Caltech Math Meet",
+      "source": "https://www.caltechmathmeet.org/tcs-round"
+    }
+  ]
+}
