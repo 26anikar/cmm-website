@@ -133,6 +133,15 @@ for (const page of pages) {
   if (page.slug === 'sponsors') {
     dom('h4').each((_,e)=>{const t=dom(e).text().trim();if(!t)dom(e).remove();else e.tagName=t.startsWith('Tier')?'h3':'p';});
   }
+  // Wix used heading tags to style these body passages. Restore their meaning
+  // so an import cannot reintroduce oversized text or spurious navigation items.
+  if (page.slug === 'rules') dom('h2').filter((_,e)=>dom(e).text().startsWith('This year, CMM is implementing a guts round.')).each((_,e)=>{e.tagName='p';});
+  if (page.slug === 'puzzle-hunt') dom('h5').filter((_,e)=>dom(e).text().startsWith('Held at CMM')).each((_,e)=>{e.tagName='p';});
+  if (page.slug === 'tcs-round') {
+    const heading=dom('h1');
+    const parts=heading.html().split(/<br\s*\/?\s*>/i);
+    if (parts.length===2) {heading.html(parts[0].trim());heading.after(`<p>${parts[1].trim()}</p>`);}
+  }
   if (page.slug === 'tcs-round') dom('p').filter((_,e)=>['Structure','TCS Round Registration','Resources'].includes(dom(e).text().trim())).each((_,e)=>{e.tagName='h2';});
   if (page.slug === 'integration-bee') dom('figure').each((i,e)=>{dom(e).find('img').attr('alt',`${['Easy','Medium','Hard'][i]} example integral`);const label=dom(e).next();dom(e).prepend(`<figcaption>${escape(label.text().trim())}</figcaption>`);label.remove();});
   dom('.text-block').filter((_,e)=>!dom(e).text().trim()).remove();
