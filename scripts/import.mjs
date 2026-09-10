@@ -24,6 +24,17 @@ function link(url) {
 function clean(fragment) {
   const $ = load(fragment, null, false);
   $('script,style,svg').remove();
+  // Preserve emphasis before removing Wix's presentational spans. Heading
+  // weights come from the new theme; body emphasis carries content meaning.
+  $('[style]').get().reverse().forEach(e => {
+    const el = $(e), style = el.attr('style') || '';
+    const heading = el.closest('h1,h2,h3,h4,h5,h6');
+    if (heading.length && !heading.text().startsWith('This year, CMM is implementing a guts round.')) return;
+    if (!el.text().replace(/[\s\u200b]/g, '')) return;
+    if (/font-weight\s*:\s*(bold|[6-9]00)\b/i.test(style)) el.wrapInner('<strong></strong>');
+    if (/font-style\s*:\s*italic\b/i.test(style)) el.wrapInner('<em></em>');
+    if (/text-decoration\s*:\s*underline\b/i.test(style) && !el.find('a').length && !el.closest('a').length) el.wrapInner('<u></u>');
+  });
   $('*').each((_, e) => {
     for (const name of Object.keys(e.attribs)) if (!['href','src','alt','colspan','rowspan','scope'].includes(name)) $(e).removeAttr(name);
     if (e.tagName === 'a' && $(e).attr('href')) $(e).attr('href', link($(e).attr('href')));
@@ -66,7 +77,7 @@ function archive(page,$) {
   // The 2019 solution document covers both rounds.
   const combined = rounds.get('Team & Individual Rounds');
   if (combined) rounds.delete('Team & Individual Rounds');
-  let out = `<h1>${escape(page.text[0])}</h1><p><a href="/problems/">← All competitions</a></p><div class="table-scroll"><table><thead><tr><th scope="col">Round</th><th scope="col">Tests</th><th scope="col">Solutions</th></tr></thead><tbody>`;
+  let out = `<h1>${escape(page.text[0])}</h1><p><a href="/problems/">← All competitions</a></p><div class="table-scroll"><table class="problem-table"><thead><tr><th scope="col">Round</th><th scope="col">Tests</th><th scope="col">Solutions</th></tr></thead><tbody>`;
   for (const [label,links] of rounds) out += `<tr><th scope="row">${escape(label)}</th><td>${a(links[0],'Download PDF')}</td><td>${links[1] ? a(links[1],'Download PDF') : combined && /Team|Individual/.test(label) ? a(combined[0],'Combined solutions') : '—'}</td></tr>`;
   out += '</tbody></table></div>';
   if (bee.length) {
@@ -144,6 +155,20 @@ for (const page of pages) {
   }
   if (page.slug === 'tcs-round') dom('p').filter((_,e)=>['Structure','TCS Round Registration','Resources'].includes(dom(e).text().trim())).each((_,e)=>{e.tagName='h2';});
   if (page.slug === 'integration-bee') dom('figure').each((i,e)=>{dom(e).addClass('math-example');dom(e).find('img').attr('alt',`${['Easy','Medium','Hard'][i]} example integral`);const label=dom(e).next();dom(e).prepend(`<figcaption>${escape(label.text().trim())}</figcaption>`);label.remove();});
+  // Some original section labels were paragraphs styled larger than body text.
+  const sectionLabels = {
+    'admissions-events': ['Information Session + Campus Tours'],
+    discord: ['Students join here', 'Coaches join here'],
+    scheduling: ['Friday, January 23:', 'Saturday, January 24:'],
+  };
+  dom('p').filter((_,e)=>(sectionLabels[page.slug] || []).includes(dom(e).text().trim())).each((_,e)=>{e.tagName='h2';});
+  if (page.slug === 'resources') dom('p').filter((_,e)=>dom(e).text().trim()==='Supplementary Material').each((_,e)=>{e.tagName='h3';dom(e).text('Supplementary Material');});
+  if (page.slug === 'registration') dom('p').filter((_,e)=>/^Caltech Math Meet 2027 will take place|^Registration is open from now/.test(dom(e).text().trim())).addClass('event-summary');
+  if (page.slug === 'sponsors') {
+    dom('h1')[0].tagName='h2';
+    dom.root().prepend('<h1>Sponsors</h1>');
+  }
+  if (page.slug === 'scheduling') dom('.table-scroll').each((_,e)=>dom(e).attr('aria-label',dom(e).prev().text().trim()));
   dom('.text-block').filter((_,e)=>!dom(e).text().trim()).remove();
   // Keep table headers meaningful after removing Wix presentation markup.
   dom('thead td').each((_,e)=>{e.tagName='th';dom(e).attr('scope','col');});

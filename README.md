@@ -42,6 +42,7 @@ The workflow in `.github/workflows/pages.yml` publishes `dist/` with GitHub Acti
 All 35 pages and 176 PDFs are stored in the repository. The build does not fetch anything from Wix. Original images are preserved and small WebP versions are generated for the website. Registration continues to use the existing external Google Form.
 
 See [MIGRATION.md](MIGRATION.md) for the migration inventory and content needing review.
+See [TYPOGRAPHY-AUDIT.md](TYPOGRAPHY-AUDIT.md) for the original-site comparison and typography corrections across all 35 pages.
 
 ## Custom domain later
 
