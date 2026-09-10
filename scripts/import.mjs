@@ -143,7 +143,7 @@ for (const page of pages) {
     if (parts.length===2) {heading.html(parts[0].trim());heading.after(`<p>${parts[1].trim()}</p>`);}
   }
   if (page.slug === 'tcs-round') dom('p').filter((_,e)=>['Structure','TCS Round Registration','Resources'].includes(dom(e).text().trim())).each((_,e)=>{e.tagName='h2';});
-  if (page.slug === 'integration-bee') dom('figure').each((i,e)=>{dom(e).find('img').attr('alt',`${['Easy','Medium','Hard'][i]} example integral`);const label=dom(e).next();dom(e).prepend(`<figcaption>${escape(label.text().trim())}</figcaption>`);label.remove();});
+  if (page.slug === 'integration-bee') dom('figure').each((i,e)=>{dom(e).addClass('math-example');dom(e).find('img').attr('alt',`${['Easy','Medium','Hard'][i]} example integral`);const label=dom(e).next();dom(e).prepend(`<figcaption>${escape(label.text().trim())}</figcaption>`);label.remove();});
   dom('.text-block').filter((_,e)=>!dom(e).text().trim()).remove();
   // Keep table headers meaningful after removing Wix presentation markup.
   dom('thead td').each((_,e)=>{e.tagName='th';dom(e).attr('scope','col');});
