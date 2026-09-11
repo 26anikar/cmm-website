@@ -44,6 +44,8 @@ The shared header was subsequently matched to the user's original-header screens
 
 The header was then shortened at the user's request: desktop red area reduced from 150px to 100px, gold band reduced to 16px, and logo width adjusted from 180px to 160px. Compact headers use an 80px minimum (72px on phones) with a 12px gold band. Menu text and click-target sizes remain the same. Header layout and all dropdowns passed checks at the seven widths above.
 
+The footer now matches the original screenshot with a full-width dark red background, centered gold CMM logo, a white “Questions? Contact Us” link, and the contact email. The separate “Stay connected” panel was removed. The gold mailing-list email button is integrated into the footer on the homepage only, preserving the user's earlier scope request. It sits on the right on desktop and below the centered contact information at smaller widths. Footer fit was checked at 1782, 1440, 1101, 1100, 390, and 320px; all page outputs and the 404 were checked for correct mailing-button visibility.
+
 ## Verification
 
 - `npm run build`: successful static build.

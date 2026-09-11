@@ -90,3 +90,16 @@
 @media(max-width:1180px){.header-inner{min-height:100px;padding:20px 24px;gap:18px}.brand img{width:130px}.site-header nav{flex-basis:100%;max-width:none;font-size:17px}.site-header nav>.home-link,.site-header .nav-group{flex:none;text-align:left;border-left:0}.site-header .nav-group:nth-child(3){flex:none}.site-header nav>.home-link,.site-header .nav-group summary{padding:12px 8px}.site-header .nav-group summary{border-top-color:#ffffff40}.site-header .nav-group summary:after{display:inline-block;color:#e3d192;float:right}.site-header .nav-group[open] summary:after{transform:rotate(180deg)}.site-header .nav-group>div{background:#650b00;border:0;box-shadow:none}.site-header .menu-toggle{min-height:44px}}
 @media(max-width:1180px){.site-header{border-bottom-width:12px}.header-inner{min-height:80px;padding:12px 24px}}
 @media(max-width:650px){.header-inner{padding:12px 20px;min-height:72px}.brand img{width:115px}}
+
+/* Centered logo and contact information from the original footer. */
+.site-footer{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;max-width:none;min-height:190px;margin:0;padding:28px 24px;background:#800d00;border-top:1px solid #e3d192;color:#fff;font-size:17px;line-height:1.5;text-align:center}
+.footer-contact-details{display:flex;flex-direction:column;align-items:center;gap:8px}
+.site-footer a{color:#fff;text-decoration:none}
+.site-footer a:hover{text-decoration:underline}
+.footer-brand{display:block;margin-bottom:4px}
+.footer-brand img{display:block;width:130px;height:auto}
+.site-footer .footer-mailing{position:absolute;right:28px;bottom:28px;display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 28px;border-radius:999px;background:#e3d192;color:#800d00;font-family:var(--serif);font-size:16px;font-weight:600;line-height:1.4}
+.site-footer a:focus-visible{outline-color:#f1e4b5}
+@media(max-width:1100px){.site-footer .footer-mailing{position:static;margin-top:24px;max-width:100%}}
+@media(max-width:650px){.site-footer{padding:26px 20px;font-size:16px}.site-footer .footer-mailing{padding:12px 22px}}
+@media print{.site-footer{display:none}}
