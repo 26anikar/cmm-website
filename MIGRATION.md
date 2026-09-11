@@ -38,6 +38,8 @@ The user selected a simpler responsive layout. This version replaces Wix positio
 
 Following the user's homepage screenshot, the homepage now restores the full-width awards photo, centered white Sora title and bold introduction, and five photo links on a gold background. The links wrap into fewer columns on smaller screens. The photo is static; the original Wix slideshow is not reproduced. Existing navigation and interior-page layouts remain in place.
 
+The shared header was subsequently matched to the user's original-header screenshot: dark red background, larger standalone gold CMM logo, white menu labels separated by thin vertical gold lines, and a pale gold band below. Desktop navigation is 18px; the compact menu uses 17px labels, with 16px dropdown links and at least 44px click targets. All dropdowns and keyboard open/close behavior were checked at 1852, 1440, 1181, 1180, 768, 390, and 320px. The full 35-page desktop/mobile browser checks passed.
+
 ## Verification
 
 - `npm run build`: successful static build.

@@ -14,7 +14,7 @@ A subsequent comparison of the Problem Archive identified that retaining Georgia
 
 Following the user's Contact page review, standard interior titles were reduced from 72px to a 60px desktop maximum and given a consistent 500 weight, including pages that previously used 700. They scale to 36px on phones. Archive detail and TCS titles retain their smaller 45px desktop / 32px phone scale with the same 500 weight. Section headings now use a 36px desktop maximum / 28px phone size and generally 500 weight; Rules retains its original bold Bitter sections. Balanced line wrapping improves long titles. The homepage, archive card labels, body text, and navigation keep their existing treatment. All 34 interior pages were checked at 1440, 768, 390, and 320px for heading overflow and oversized body text, with no findings; all 35 pages also passed the desktop/mobile browser checks.
 
-Original navigation and dropdown text measured 16px, compared with 13px in the first migration. Both are now 16px, dropdown panels are wider, and links have at least 44px-tall click targets. The mobile menu appears below 1181px so enlarged labels do not crowd the header. Checks cover 1440, 1181, 1180, 1024, 390, and 320px widths.
+Original navigation and dropdown text measured 16px, compared with 13px in the first migration. Dropdown links are now 16px, panels are wider, and links have at least 44px-tall click targets. Following the user's original-header screenshot, desktop top-level labels were enlarged to 18px (17px in the compact menu) and changed to white on dark red, with vertical gold dividers and a larger gold logo. The mobile menu appears below 1181px so enlarged labels do not crowd the header. The restored header was checked at 1852, 1440, 1181, 1180, 768, 390, and 320px widths.
 
 ## Overall assessment
 
@@ -28,7 +28,7 @@ Responsive sizing and the simpler layout remain. Heading families now follow the
 | Section headings | Usually 28–50px; some were styled paragraphs | Raleway or Bitter according to the original page; semantic `h2`, 36px desktop / 28px mobile |
 | Smaller subsections | Usually 20–40px | Raleway `h3`, 22.4px; homepage uses Sora |
 | Archive year links/cards | Raleway, 25px | Raleway, 25px |
-| Main navigation and dropdowns | 16px Avenir | 16px system sans-serif; wider panels and larger click targets |
+| Main navigation and dropdowns | 16px Avenir | 18px desktop / 17px compact top-level labels; 16px dropdowns; system sans-serif, wider panels and larger click targets |
 | Running body text | Usually 15–20px, with several oversized introductions | 17px desktop / 16px mobile; consistent family and line spacing |
 | Registration date and opening period | 35px bold | 20px bold summary paragraphs, visibly distinct without competing with the title |
 | Archive download links | 16px | Restored to 16px from the initial 14px table default |
