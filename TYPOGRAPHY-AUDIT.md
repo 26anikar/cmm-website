@@ -51,7 +51,7 @@ Wording and link destinations were checked against the pre-review pages. They ar
 
 | Page | Result |
 | --- | --- |
-| [Home](https://26anikar.github.io/cmm-website/) | Hero, body introduction, card titles, and descriptions follow the new type hierarchy. |
+| [Home](https://26anikar.github.io/cmm-website/) | Subsequently restored the screenshot's full-width photo banner, centered white Sora title, bold white introduction, and white photo-card headings on a gold section. Title and introduction scale down on phones. |
 | [Admissions events](https://26anikar.github.io/cmm-website/admissions-events/) | Restored session heading and image-credit emphasis. |
 | [Contact](https://26anikar.github.io/cmm-website/contact/) | Restored emphasized contact sentence at readable body size. |
 | [Discord](https://26anikar.github.io/cmm-website/discord/) | Restored Students and Coaches section headings. |

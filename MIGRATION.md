@@ -36,6 +36,8 @@ No registration or payment was submitted during verification. Existing mailing-l
 
 The user selected a simpler responsive layout. This version replaces Wix positioning with semantic HTML, mobile navigation, readable tables, and local assets. Problem and solution links are organized by round. Check-payment labels are shown beside explicit payee, memo, return-address, and recipient labels. The empty Directions section now links to [Caltech's official visitor directions](https://www.caltech.edu/about/visit/directions).
 
+Following the user's homepage screenshot, the homepage now restores the full-width awards photo, centered white Sora title and bold introduction, and five photo links on a gold background. The links wrap into fewer columns on smaller screens. The photo is static; the original Wix slideshow is not reproduced. Existing navigation and interior-page layouts remain in place.
+
 ## Verification
 
 - `npm run build`: successful static build.

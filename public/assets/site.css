@@ -22,3 +22,24 @@
 .page-content:is([data-page="registration"],[data-page="rules"],[data-page="sponsors"],[data-page="admissions-events"],[data-page="faculty-lecture"],[data-page="friday-night-event"],[data-page="guest-speaker"],[data-page="integration-bee"]) h1{font-weight:700}
 .page-content[data-page^="problems/"] h1,.page-content[data-page="tcs-round"] h1{font-size:clamp(2rem,4vw,45px)}
 @media(max-width:650px){.header-inner{gap:12px}.menu-toggle{gap:12px}}
+
+/* Homepage composition follows the original photo banner and gold link strip. */
+.home-content{max-width:none;padding:0;background:#f1e4b5}
+.home-content .hero{position:relative;isolation:isolate;display:grid;grid-template-columns:1fr;place-items:center;gap:0;min-height:clamp(600px,40vw,750px);padding:48px 24px 64px;text-align:center;overflow:hidden}
+.home-content .hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 50%;border-radius:0;z-index:-2}
+.home-content .hero:after{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(#0002,#0003 45%,#0008)}
+.home-content .hero-copy{width:100%;max-width:1060px}
+.home-content .hero h1{color:#fff;font-size:clamp(56px,7vw,132px);font-weight:700;line-height:1.22;letter-spacing:-.025em;margin:0 0 48px;text-shadow:0 3px 4px #0008}
+.home-content .hero .lead{max-width:1000px;margin:0 auto;color:#fff;font-size:clamp(20px,1.9vw,32px);font-weight:700;line-height:1.45;text-wrap:pretty;text-shadow:0 2px 3px #000b}
+.home-links{border-top:48px solid #f1e4b5;background:#e3d192;padding:36px 28px 48px}
+.home-link-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(20px,2.6vw,50px);max-width:1860px;margin:auto}
+.photo-card{display:block;min-width:0;text-align:center;color:var(--ink);text-decoration:none;border-radius:10px}
+.card-photo{position:relative;isolation:isolate;overflow:hidden;border-radius:10px;min-height:210px;display:grid;place-items:center;padding:20px 8px}
+.card-photo:after{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(#0001,#0006)}
+.card-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.home-content .card-photo h2{color:#fff;font-size:clamp(23px,2.2vw,40px);font-weight:700;line-height:1.2;letter-spacing:-.025em;margin:0;text-shadow:0 2px 3px #000,1px 0 #000,-1px 0 #000}
+.photo-card p{font-size:16px;line-height:1.6;margin:18px 4px 0}
+.photo-card:hover h2,.photo-card:focus-visible h2{text-decoration:underline;text-underline-offset:6px}
+@media(max-width:1100px){.home-link-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.home-content .card-photo h2{font-size:28px}}
+@media(max-width:700px){.home-content .hero{min-height:580px;padding:48px 24px}.home-content .hero h1{font-size:clamp(48px,10vw,70px);margin-bottom:32px}.home-content .hero .lead{font-size:19px;line-height:1.55}.home-content .hero>img{object-position:48% center}.home-links{border-top-width:28px;padding:24px 20px 36px}.home-link-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 20px}.card-photo{min-height:200px}.home-content .card-photo h2{font-size:25px}}
+@media(max-width:480px){.home-link-grid{grid-template-columns:1fr}.card-photo{min-height:220px}.home-content .card-photo h2{font-size:32px}}
