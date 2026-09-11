@@ -7,6 +7,26 @@
 .page-content[data-page="sponsors"] a[href="https://www.citadelsecurities.com/"] figure{width:390px;max-width:100%;padding:20px;background:#800d00;border-radius:3px;print-color-adjust:exact;-webkit-print-color-adjust:exact}
 .event-summary{font-size:20px;line-height:1.6}
 .problem-table{font-size:16px}
+.payment-examples{display:grid;grid-template-columns:1.598fr 1fr;gap:32px;margin:36px 0 48px;align-items:start}
+.payment-example{min-width:0}
+.payment-example h3{margin:0 0 20px}
+.page-content .payment-diagram{margin:0 0 20px}
+.payment-diagram-canvas{position:relative;container-type:inline-size}
+.page-content .payment-diagram img{display:block;width:100%;height:auto;max-height:none}
+.diagram-label{position:absolute;color:#101010;font-family:var(--sans);font-weight:650;line-height:1.25}
+.diagram-payee{left:15%;top:31%;width:56%;font-size:2.6cqw}
+.diagram-memo{left:11.5%;top:71%;width:36%;font-size:1.9cqw}
+.envelope-diagram .payment-diagram-canvas{aspect-ratio:492/346;overflow:hidden}
+.page-content .envelope-diagram img{position:absolute;max-width:none;width:124.39024%;left:-12.19512%;top:-6.93642%}
+.diagram-sender{left:6%;top:11%;width:37%;font-size:3.5cqw}
+.diagram-recipient{left:7%;top:49%;width:46%;font-size:3.5cqw}
+.diagram-recipient p{margin:0}
+.payment-diagram figcaption{font-size:14px;line-height:1.5;color:var(--muted);margin-top:12px}
+.payment-example .check-details{display:grid;grid-template-columns:1fr;gap:4px;margin:0;padding:20px;font-size:16px;line-height:1.6}
+.payment-example .check-details dd,.payment-example .check-details p{margin:0}
+.payment-example .check-details dd+dt{margin-top:12px}
+@media(max-width:900px){.payment-examples{grid-template-columns:1fr;gap:36px;max-width:740px}.payment-example:has(.envelope-diagram){max-width:520px}}
+@media(max-width:650px){.payment-example .check-details{padding:18px}}
 @media(min-width:1200px){.home-cards{grid-template-columns:repeat(6,minmax(0,1fr))}.home-cards .card{grid-column:span 2}.home-cards .card:nth-child(n+4){grid-column:span 3}}
 @media(max-width:1180px){.header-inner{padding:18px 24px;flex-wrap:wrap}.brand img{width:86px}.menu-toggle{display:flex;gap:25px;align-items:center;background:none;border:1px solid var(--line);padding:8px 14px;font-size:16px;border-radius:3px}nav{display:none;width:100%;flex-direction:column;align-items:stretch;gap:0}nav.is-open{display:flex}.home-link{padding:12px 0}.nav-group summary{padding:12px 0;border-top:1px solid var(--line)}.nav-group>div{position:static;min-width:0;box-shadow:none;border:none;background:var(--soft);margin-bottom:10px}.hero{gap:32px}.hero>img{height:520px}.hero h1{font-size:4rem}.card-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.stay-connected{padding:40px;flex-wrap:wrap}.button-light{white-space:normal}}
 @media(max-width:650px){body{font-size:16px}.header-inner{padding:16px 20px;gap:16px}.brand{gap:12px}.brand span{font-size:14px;padding-left:12px}.brand img{width:74px}.home-content{padding:35px 20px 50px}.hero{grid-template-columns:1fr;gap:26px}.hero h1{font-size:4.4rem}.hero>img{height:340px}.hero .lead{font-size:16px}.home-section{margin-top:55px;padding-top:30px}.home-section h2{font-size:2.1rem}.card-grid{grid-template-columns:1fr;gap:18px}.home-cards img{height:210px}.page-content{padding:24px 20px 60px}h1{font-size:2.7rem;overflow-wrap:break-word}h2{margin-top:40px}.on-this-page ul{columns:1}.stay-connected{padding:35px 20px;gap:20px}.stay-connected h2{font-size:1.9rem}.site-footer{padding:30px 20px;grid-template-columns:1fr;gap:12px}.site-footer p{grid-row:2}.footer-links{margin-top:8px;flex-wrap:wrap}th,td{padding:10px 12px}.breadcrumbs{margin-bottom:25px}}

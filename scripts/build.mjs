@@ -4,6 +4,7 @@ import {load} from 'cheerio';
 import sharp from 'sharp';
 import { createHash } from 'node:crypto';
 import { addHomeSlideshow } from './home-slideshow.mjs';
+import { addPaymentDiagrams } from './payment-diagrams.mjs';
 const site = JSON.parse(await fs.readFile('content/site.json','utf8'));
 const base = (process.env.BASE_PATH ?? '/cmm-website').replace(/\/$/,'');
 const siteUrl = process.env.SITE_URL || site.url;
@@ -33,6 +34,7 @@ for (const page of [...site.pages,{slug:'404',title:'Page not found | Caltech Ma
   let fragment = page.slug === '404' ? '<h1>Page not found</h1><p>The page may have moved. Explore the competition archive or return home.</p><p><a class="button" href="/">Return home</a> <a href="/problems/">Problem archive</a></p>' : await fs.readFile(`content/pages/${page.slug.replaceAll('/','__')||'home'}.html`,'utf8');
   const $ = load(fragment,null,false);
   if (!page.slug) addHomeSlideshow($);
+  if (page.slug === 'payment-instructions') addPaymentDiagrams($);
   $('img').each((_,e)=>{const result=optimized.get($(e).attr('src'));if(result)$(e).attr({src:result.url,width:result.width,height:result.height});});
   $('[href],[src]').each((_,e)=>{for (const attr of ['href','src']) {const value=$(e).attr(attr);if(value?.startsWith('/')&&!value.startsWith('//')) $(e).attr(attr,url(value));}});
   const headings=[];
