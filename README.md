@@ -35,7 +35,7 @@ Open http://127.0.0.1:4173/cmm-website/. After edits, run `npm run build` and re
 
 With Google Chrome installed, run `npm run test:browser` while the preview server is running. It checks every page at desktop and mobile widths, image decoding, JavaScript errors, and navigation.
 
-Run `npm run test:slideshow` to check banner rotation, controls, responsive layout, reduced motion, and fallbacks. The three local banner images and controls are added by `scripts/home-slideshow.mjs`; the five-second interval and pause behavior are in `public/assets/site.js`. Both CSS and JavaScript URLs are versioned automatically at build time.
+Run `npm run test:slideshow` to check automatic banner rotation, responsive layout, reduced motion, and fallbacks. The three local banner images are added by `scripts/home-slideshow.mjs`; the five-second interval is in `public/assets/site.js`. The banner has no counter or playback controls. Both CSS and JavaScript URLs are versioned automatically at build time.
 
 ## Deployment
 
