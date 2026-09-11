@@ -1,0 +1,58 @@
+import {chromium,expect} from '@playwright/test';
+import assert from 'node:assert/strict';
+const browser=await chromium.launch({channel:'chrome'});
+const base=process.env.TEST_SITE_URL || 'http://127.0.0.1:4173/cmm-website/';
+for(const width of [1440,390,320]){
+  const page=await browser.newPage({viewport:{width,height:1000},reducedMotion:'no-preference'});
+  const errors=[];page.on('pageerror',e=>errors.push(e.message));
+  await page.clock.install();
+  await page.goto(base);
+  await page.locator('.hero-slide').evaluateAll(es=>Promise.all(es.map(e=>e.decode())));
+  await page.evaluate(()=>document.fonts.ready);
+  const position=page.locator('.slideshow-position');
+  const title=await page.locator('.hero h1').boundingBox();
+  for(const slide of [2,3,1]){
+    await page.clock.runFor(5100);
+    await expect(position).toHaveText(`${slide} / 3`);
+    await expect(page.locator('.hero-slide.is-current')).toHaveCSS('opacity','1');
+    await expect(page.locator('.hero-slide:not([aria-hidden])')).toHaveCount(1);
+    assert.deepEqual(await page.locator('.hero h1').boundingBox(),title,'Title moved during rotation');
+  }
+  await page.getByRole('button',{name:'Pause banner slideshow'}).click();
+  await page.mouse.move(0,0);
+  await page.clock.runFor(11000);await expect(position).toHaveText('1 / 3');
+  await page.getByRole('button',{name:'Next banner photo'}).click();await expect(position).toHaveText('2 / 3');
+  await page.getByRole('button',{name:'Previous banner photo'}).click();await expect(position).toHaveText('1 / 3');
+  await page.getByRole('button',{name:'Previous banner photo'}).click();await expect(position).toHaveText('3 / 3');
+  const text=await page.locator('.hero .lead').boundingBox(),controls=await page.locator('.slideshow-controls').boundingBox();
+  assert.ok(text.y+text.height<controls.y,'Controls overlap introduction');
+  assert.ok(controls.x>=0&&controls.x+controls.width<=width);
+  await expect(page.locator('.hero-slide.is-current')).toHaveCSS('opacity','1');
+  await page.screenshot({path:`.cache/slideshow-${width}.png`});
+  await page.getByRole('button',{name:'Play banner slideshow'}).click();await page.mouse.move(0,0);
+  await page.clock.runFor(5100);await expect(position).toHaveText('1 / 3');
+  await page.getByRole('button',{name:'Next banner photo'}).focus();
+  await page.clock.runFor(11000);await expect(position).toHaveText('1 / 3');
+  assert.deepEqual(errors,[]);await page.close();
+  console.log(`Rotation, pause/resume, manual wraparound, keyboard focus and layout verified at ${width}px.`);
+}
+const reduced=await browser.newPage({reducedMotion:'reduce'});
+await reduced.clock.install();await reduced.goto(base);
+await reduced.clock.runFor(16000);
+await expect(reduced.locator('.slideshow-position')).toHaveText('1 / 3');
+await expect(reduced.getByRole('button',{name:'Play banner slideshow'})).toBeVisible();
+await reduced.getByRole('button',{name:'Next banner photo'}).click();
+await expect(reduced.locator('.slideshow-position')).toHaveText('2 / 3');
+assert.equal(await reduced.locator('.hero-slide').first().evaluate(e=>getComputedStyle(e).transitionDuration),'0s');
+await reduced.close();
+const noScript=await browser.newPage({javaScriptEnabled:false});await noScript.goto(base);
+await expect(noScript.locator('.slideshow-controls')).toBeHidden();
+assert.equal(await noScript.locator('.hero-slide').first().evaluate(e=>getComputedStyle(e).opacity),'1');
+await noScript.close();
+const failure=await browser.newPage({reducedMotion:'reduce'});
+await failure.route('**/*cab1a08c*',route=>route.abort());await failure.goto(base);
+await failure.getByRole('button',{name:'Previous banner photo'}).click();
+await expect(failure.locator('.slideshow-position')).toHaveText('1 / 3');
+await expect(failure.locator('.hero-slide.is-current')).toHaveAttribute('alt',/Medal-winning/);
+await failure.close();
+await browser.close();console.log('Reduced motion, JavaScript-disabled fallback and failed-image fallback verified.');

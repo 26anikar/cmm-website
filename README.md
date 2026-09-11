@@ -35,6 +35,8 @@ Open http://127.0.0.1:4173/cmm-website/. After edits, run `npm run build` and re
 
 With Google Chrome installed, run `npm run test:browser` while the preview server is running. It checks every page at desktop and mobile widths, image decoding, JavaScript errors, and navigation.
 
+Run `npm run test:slideshow` to check banner rotation, controls, responsive layout, reduced motion, and fallbacks. The three local banner images and controls are added by `scripts/home-slideshow.mjs`; the five-second interval and pause behavior are in `public/assets/site.js`. Both CSS and JavaScript URLs are versioned automatically at build time.
+
 ## Deployment
 
 The workflow in `.github/workflows/pages.yml` publishes `dist/` with GitHub Actions. In repository **Settings → Pages**, the source is **GitHub Actions**. Check the **Actions** tab after a commit to see deployment progress.
