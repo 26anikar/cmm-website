@@ -105,7 +105,7 @@ for (const page of pages) {
     html = `<section class="hero"><div class="hero-copy"><h1>Caltech<br>Math Meet</h1><p class="lead">${escape(intro)}</p></div><img src="${asset(normalizeImage(page.images[3].src))}" alt="Medal-winning teams at the Caltech Math Meet awards ceremony" fetchpriority="high"></section><section class="home-links" aria-label="Explore Caltech Math Meet"><div class="home-link-grid">${destinations.map((slug,i)=>`<a class="photo-card" href="/${slug}/"><div class="card-photo"><img src="${asset(normalizeImage(page.images[i+1].src))}" alt="" loading="lazy"><h2>${escape(page.text[2+i*2])}</h2></div><p>${escape(page.text[3+i*2])}</p></a>`).join('')}</div></section>`;
   }
   if (page.slug === 'problems') {
-    html = `<h1>CMM Problem Archive</h1><p class="lead">Explore tests and solutions from Caltech Math Meet and CHMMC.</p><div class="card-grid archive-grid">${page.links.map(l=>`<a class="card" href="${link(l.href)}"><h2>${escape(l.text.trim())}</h2><span>Tests &amp; solutions →</span></a>`).join('')}</div>`;
+    html = `<h1>CMM Problem Archive</h1><div class="card-grid archive-grid">${page.links.map(l=>`<a class="card" href="${link(l.href)}"><h2>${escape(l.text.trim())}</h2><span>Tests &amp; solutions →</span></a>`).join('')}</div>`;
   }
   const dom = load(html,null,false);
   const firstHeading = dom('h1,h2,h3,h4,h5,h6').first();
