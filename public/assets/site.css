@@ -19,7 +19,9 @@
 .home-cards h3{font-weight:600}
 .page-content:is([data-page="rules"],[data-page="payment-instructions"],[data-page="integration-bee"]) h2{font-family:var(--serif)}
 .page-content[data-page="rules"] h2{font-weight:700}
-.page-content:is([data-page="registration"],[data-page="rules"],[data-page="sponsors"],[data-page="admissions-events"],[data-page="faculty-lecture"],[data-page="friday-night-event"],[data-page="guest-speaker"],[data-page="integration-bee"]) h1{font-weight:700}
+.page-content h1{font-size:clamp(2.25rem,4.5vw,3.75rem);font-weight:500;line-height:1.18;text-wrap:balance}
+.page-content h2{font-size:clamp(1.75rem,3vw,2.25rem);font-weight:500;text-wrap:balance}
+.page-content .archive-grid h2{font-size:25px;font-weight:400;text-wrap:initial}
 .page-content[data-page^="problems/"] h1,.page-content[data-page="tcs-round"] h1{font-size:clamp(2rem,4vw,45px)}
 @media(max-width:650px){.header-inner{gap:12px}.menu-toggle{gap:12px}}
 

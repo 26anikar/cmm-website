@@ -10,7 +10,9 @@ This is a comparison of HTML page content and image display sizes. The typograph
 
 ## Heading and navigation follow-up
 
-A subsequent comparison of the Problem Archive identified that retaining Georgia did not match the original heading style closely enough. The heading-family decision below supersedes the initial two-font redesign. The archive title now uses the original Raleway at 72px on a 1440px viewport, and year-card headings use Raleway at the original 25px. Competition detail titles use the original 45px desktop scale.
+A subsequent comparison of the Problem Archive identified that retaining Georgia did not match the original heading style closely enough. The heading-family decision below supersedes the initial two-font redesign. The archive title uses the original Raleway, and year-card headings use Raleway at the original 25px. Competition detail titles use the original 45px desktop scale.
+
+Following the user's Contact page review, standard interior titles were reduced from 72px to a 60px desktop maximum and given a consistent 500 weight, including pages that previously used 700. They scale to 36px on phones. Archive detail and TCS titles retain their smaller 45px desktop / 32px phone scale with the same 500 weight. Section headings now use a 36px desktop maximum / 28px phone size and generally 500 weight; Rules retains its original bold Bitter sections. Balanced line wrapping improves long titles. The homepage, archive card labels, body text, and navigation keep their existing treatment. All 34 interior pages were checked at 1440, 768, 390, and 320px for heading overflow and oversized body text, with no findings; all 35 pages also passed the desktop/mobile browser checks.
 
 Original navigation and dropdown text measured 16px, compared with 13px in the first migration. Both are now 16px, dropdown panels are wider, and links have at least 44px-tall click targets. The mobile menu appears below 1181px so enlarged labels do not crowd the header. Checks cover 1440, 1181, 1180, 1024, 390, and 320px widths.
 
@@ -22,8 +24,8 @@ Responsive sizing and the simpler layout remain. Heading families now follow the
 
 | Content role | Original examples | Current treatment |
 | --- | --- | --- |
-| Page titles | Approximately 40–110px across pages | Raleway; most interior pages 72px at 1440px and 43.2px at 390px; competition detail/TCS titles 45px desktop / 32px mobile. Homepage uses Sora. |
-| Section headings | Usually 28–50px; some were styled paragraphs | Raleway or Bitter according to the original page; semantic `h2`, 40px desktop / 28.8px mobile |
+| Page titles | Approximately 40–110px across pages | Raleway 500; most interior pages 60px at 1440px and 36px at 390px; competition detail/TCS titles 45px desktop / 32px mobile. Homepage uses Sora. |
+| Section headings | Usually 28–50px; some were styled paragraphs | Raleway or Bitter according to the original page; semantic `h2`, 36px desktop / 28px mobile |
 | Smaller subsections | Usually 20–40px | Raleway `h3`, 22.4px; homepage uses Sora |
 | Archive year links/cards | Raleway, 25px | Raleway, 25px |
 | Main navigation and dropdowns | 16px Avenir | 16px system sans-serif; wider panels and larger click targets |
