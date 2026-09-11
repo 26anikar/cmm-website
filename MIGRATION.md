@@ -40,6 +40,8 @@ Following the user's homepage screenshot, the homepage now restores the full-wid
 
 The shared header was subsequently matched to the user's original-header screenshot: dark red background, larger standalone gold CMM logo, white menu labels separated by thin vertical gold lines, and a pale gold band below. Desktop navigation is 18px; the compact menu uses 17px labels, with 16px dropdown links and at least 44px click targets. All dropdowns and keyboard open/close behavior were checked at 1852, 1440, 1181, 1180, 768, 390, and 320px. The full 35-page desktop/mobile browser checks passed.
 
+The header was then shortened at the user's request: desktop red area reduced from 150px to 100px, gold band reduced to 16px, and logo width adjusted from 180px to 160px. Compact headers use an 80px minimum (72px on phones) with a 12px gold band. Menu text and click-target sizes remain the same. Header layout and all dropdowns passed checks at the seven widths above.
+
 ## Verification
 
 - `npm run build`: successful static build.
