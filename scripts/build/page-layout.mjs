@@ -25,23 +25,6 @@ export function applyPageLayout($, slug) {
   const body = $('<div class="page-body"></div>').append($.root().contents());
   $.root().append(title, body);
 
-  if (slug === 'admissions-events') {
-    const artwork = $('<div class="admissions-artwork"></div>').append(body.find('figure').remove());
-    artwork.append(body.find('.text-block').filter((_, e) => $(e).text().includes('Image source:')).remove());
-    const copy = $('<div class="admissions-copy"></div>').append(title, body);
-    $.root().append(copy, artwork);
-  }
-
-  if (slug === 'discord') {
-    const options = $('<div class="join-options"></div>');
-    body.find('.button').each((_, e) => {
-      const button = $(e);
-      const label = button.prev('.text-block');
-      options.append($('<section class="join-option"></section>').append(label.remove(), button.remove()));
-    });
-    body.append(options);
-  }
-
   $('.table-scroll').each((_, e) => {
     const table = $(e);
     const precedingHeading = table.prevAll().find('h2').add(table.prevAll('h2')).last().text();

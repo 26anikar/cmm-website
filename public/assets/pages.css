@@ -116,24 +116,11 @@ main { flex: 1; }
   letter-spacing: .08em;
 }
 
-/* Original admissions illustration alongside its event details. */
-.page-content[data-page="admissions-events"] { display: grid; grid-template-columns: minmax(0,1.6fr) minmax(0,1fr); align-items: start; }
-.admissions-copy { min-width: 0; }
-.admissions-copy .page-title { background: transparent; border: 0; padding-bottom: 24px; }
-.admissions-copy .page-body { padding: 20px 48px 64px; text-align: center; }
-.admissions-copy .page-body h2 { margin-top: 0; font-size: clamp(23px,2.3vw,32px); }
-.admissions-artwork { padding-bottom: 24px; }
-.page-content .admissions-artwork figure { max-width: none; margin: 0; }
-.page-content .admissions-artwork img { width: 100%; max-height: none; display: block; }
-.admissions-artwork .text-block { padding: 12px 20px 0; font-size: 13px; }
 
 /* Center short information pages and the original pair of Discord links. */
-.page-content:is([data-page="contact"],[data-page="discord"],[data-page="integration-bee"],[data-page="tcs-round"]) .page-body { text-align: center; }
+.page-content:is([data-page="contact"],[data-page="integration-bee"]) .page-body { text-align: center; }
 .page-content[data-page="contact"] .page-body { padding-top: 64px; padding-bottom: 96px; }
 .page-content[data-page="contact"] .page-body strong { font-size: clamp(18px,2vw,24px); }
-.join-options { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 32px; max-width: 850px; margin: 40px auto 0; }
-.join-option { padding: 28px; background: var(--cmm-gold); border: 1px solid var(--cmm-border); border-radius: 10px; }
-.join-option h2 { margin-top: 0; font-size: 24px; }
 .page-content:is([data-page="faculty-lecture"],[data-page="friday-night-event"],[data-page="guest-speaker"]) .page-title { min-height: 50vh; display: grid; align-items: center; }
 .page-content .math-example { padding: 24px; border-top: 1px solid var(--cmm-border); }
 .page-content .math-example figcaption { font-family: 'Sora',var(--sans); font-weight: 600; }
@@ -189,9 +176,6 @@ main { flex: 1; }
 .sponsor-card p:last-child { margin-bottom: 0; }
 
 @media(max-width:900px) {
-  .page-content[data-page="admissions-events"] { grid-template-columns: 1fr; }
-  .admissions-artwork { max-width: 620px; margin: 0 auto; }
-  .admissions-copy .page-body { padding: 24px 32px 40px; }
   .page-title-photo { min-height: 480px; }
 }
 @media(max-width:650px) {
@@ -204,13 +188,11 @@ main { flex: 1; }
   .page-content th,.page-content td { padding: 12px; }
   .page-content table { font-size: 14px; }
   .page-content .problem-table :is(th,td) { padding: 12px 10px; }
-  .page-content[data-page^="problems/"] .card-grid,.join-options,.sponsor-grid { grid-template-columns: 1fr; }
-  .join-options { gap: 20px; }
+  .page-content[data-page^="problems/"] .card-grid,.sponsor-grid { grid-template-columns: 1fr; }
   .page-title-photo { padding: 60px 20px 36px; gap: 24px; }
   .page-content .registration-banner h1 { font-size: clamp(38px,10vw,64px); }
   .registration-body { font-size: 16px; }
   .sponsor-card { padding: 22px; }
-  .admissions-copy .page-body { padding: 20px 20px 40px; }
   .page-content .math-example { padding: 20px 0; }
 }
 @media print {
@@ -241,15 +223,14 @@ main { flex: 1; }
 .page-content[data-page="rules"] .page-title-photo h1 { color: #fff; }
 .page-content[data-page="rules"] .page-title-photo:after { background: #3f0500b3; }
 .page-content[data-page="rules"] .page-title-lead { font-family: 'Sora',var(--sans); }
-.page-content[data-page="admissions-events"] .page-title h1 { font-size: clamp(32px,4.5vw,64px); }
 
 /* These sections use the original site's dark burgundy backgrounds. */
-.page-content:is([data-page="problems"],[data-page^="problems/"],[data-page="p10-fall"],[data-page="resources"],[data-page="results"],[data-page="scheduling"],[data-page="contact"],[data-page="discord"],[data-page="puzzle-hunt"],[data-page="tcs-round"],[data-page="sponsors"],[data-page="404"]) {
+.page-content:is([data-page="problems"],[data-page^="problems/"],[data-page="p10-fall"],[data-page="resources"],[data-page="results"],[data-page="scheduling"],[data-page="contact"],[data-page="sponsors"],[data-page="404"]) {
   --ink: #fff8f0; --muted: #e5cbb9; --orange: #e2cf8f;
   --line: #9a625c; --soft: #650b00;
   background: #3f0500; color: #fff8f0;
 }
-.page-content:is([data-page="problems"],[data-page^="problems/"],[data-page="p10-fall"],[data-page="resources"],[data-page="results"],[data-page="scheduling"],[data-page="contact"],[data-page="discord"],[data-page="puzzle-hunt"],[data-page="tcs-round"],[data-page="sponsors"],[data-page="404"]) .page-title h1 {
+.page-content:is([data-page="problems"],[data-page^="problems/"],[data-page="p10-fall"],[data-page="resources"],[data-page="results"],[data-page="scheduling"],[data-page="contact"],[data-page="sponsors"],[data-page="404"]) .page-title h1 {
   font-size: clamp(28px,3.5vw,48px); font-weight: 400;
 }
 .page-content:is([data-page="problems"],[data-page="resources"],[data-page="results"],[data-page="scheduling"]) .page-title { border-bottom: 20px solid #b9837d; }
@@ -269,15 +250,13 @@ main { flex: 1; }
 .page-content tbody th { background: #f1e3e1; color: #242020; }
 .page-content tbody td { background: #fff; }
 .page-content tbody tr:nth-child(even) td { background: #f6eeed; }
-.page-content .join-option,.page-content .sponsor-card { background: #650b00; border: 1px solid #9a625c; }
-.page-content[data-page="puzzle-hunt"] .card { background: #800d00; border-color: #bd710e; color: #fff8f0; border-radius: 28px; }
-.page-content:is([data-page="resources"],[data-page="tcs-round"]) .page-body>.text-block { margin-left: auto; margin-right: auto; }
-.page-content[data-page="discord"] { background: #240602; }
-.page-content:is([data-page="contact"],[data-page="discord"],[data-page="tcs-round"]) .page-body h2 { font-family: 'Sora',var(--sans); font-weight: 400; }
+.page-content .sponsor-card { background: #650b00; border: 1px solid #9a625c; }
+.page-content:is([data-page="resources"]) .page-body>.text-block { margin-left: auto; margin-right: auto; }
+.page-content:is([data-page="contact"]) .page-body h2 { font-family: 'Sora',var(--sans); font-weight: 400; }
 .page-content:is([data-page="faculty-lecture"],[data-page="friday-night-event"],[data-page="guest-speaker"]) .page-title { text-align: left; padding-left: max(24px,calc((100vw - 1120px)/2)); }
 .page-content:is([data-page="faculty-lecture"],[data-page="friday-night-event"],[data-page="guest-speaker"]) .page-title h1 { margin: 0; max-width: 1000px; }
 .page-content:has(.table-scroll) [tabindex]:focus-visible { outline-color: #e2cf8f; }
-.page-content:is([data-page="problems"],[data-page^="problems/"],[data-page="resources"],[data-page="results"],[data-page="scheduling"],[data-page="contact"],[data-page="discord"],[data-page="puzzle-hunt"],[data-page="tcs-round"],[data-page="sponsors"]) :is(a,summary):focus-visible { outline-color: #e2cf8f; }
+.page-content:is([data-page="problems"],[data-page^="problems/"],[data-page="resources"],[data-page="results"],[data-page="scheduling"],[data-page="contact"],[data-page="sponsors"]) :is(a,summary):focus-visible { outline-color: #e2cf8f; }
 .home-content { background: #f1e3b5; }
 .home-links { background: #e2cf8f; border-top-color: #f1e3b5; }
 .mailing-list { background: #f1e3b5; text-align: center; }
@@ -508,6 +487,5 @@ main { flex: 1; }
 }
 @media print {
   .page-content[data-page] { --ink: #000; --orange: #000; background: #fff; color: #000; }
-  .page-content .page-title,.page-content .card,.page-content .sponsor-card,.page-content .join-option { background: #fff; color: #000; }
   .page-content .page-title h1,.page-content .archive-grid .card,.page-content .credits { color: #000; }
 }

@@ -10,19 +10,9 @@
       "source": "https://www.caltechmathmeet.org"
     },
     {
-      "slug": "admissions-events",
-      "title": "Admissions Events | Caltech Math Meet",
-      "source": "https://www.caltechmathmeet.org/admissions-events"
-    },
-    {
       "slug": "contact",
       "title": "Contact | Caltech Math Meet",
       "source": "https://www.caltechmathmeet.org/contact"
-    },
-    {
-      "slug": "discord",
-      "title": "Join The Discord! | Caltech Math Meet",
-      "source": "https://www.caltechmathmeet.org/discord"
     },
     {
       "slug": "faculty-lecture",
@@ -140,11 +130,6 @@
       "source": "https://www.caltechmathmeet.org/problems/cmm-2026-problems"
     },
     {
-      "slug": "puzzle-hunt",
-      "title": "Puzzle Hunt | Caltech Math Meet",
-      "source": "https://www.caltechmathmeet.org/puzzle-hunt"
-    },
-    {
       "slug": "registration",
       "title": "Registration | Caltech Math Meet",
       "source": "https://www.caltechmathmeet.org/registration"
@@ -173,11 +158,6 @@
       "slug": "sponsors",
       "title": "Sponsors | Caltech Math Meet",
       "source": "https://www.caltechmathmeet.org/sponsors"
-    },
-    {
-      "slug": "tcs-round",
-      "title": "TCS Round | Caltech Math Meet",
-      "source": "https://www.caltechmathmeet.org/tcs-round"
     }
   ]
 }
