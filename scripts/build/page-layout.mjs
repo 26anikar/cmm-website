@@ -39,6 +39,7 @@ function groupSponsors($) {
     'www.hudsonrivertrading.com': 'Hudson River Trading', 'www.ams.org': 'American Mathematical Society',
     'www.deshaw.com': 'D. E. Shaw', 'sig.com': 'Susquehanna International Group',
     'www.cmcmath.org': 'California Mathematics Council',
+    'artofproblemsolving.com': 'Art of Problem Solving',
   };
   const descriptionFirst = new Set(['www.jumptrading.com', 'fiverings.com', 'www.deshaw.com', 'www.cmcmath.org']);
   $('a.image-link').each((_, e) => {

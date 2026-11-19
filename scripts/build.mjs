@@ -24,8 +24,8 @@ const scriptVersion=createHash('sha256').update(await fs.readFile('public/assets
 const groups = [
   ['Registration',[['registration','Registration'],['payment-instructions','Payment Instructions']]],
   ['Past Competitions',[['problems','Problems'],['results','Results']]],
-  ['Events',[['rules','Rules'],['friday-night-event','Friday Night Event'],['integration-bee','Integration Bee'],['guest-speaker','Guest Speaker'],['faculty-lecture','Faculty Lecture']]],
-  ['Information',[['scheduling','Schedule'],['resources','Resources'],['sponsors','Sponsors'],['contact','Contact']]],
+  ['Events',[['friday-night-event','Friday Night Event'],['integration-bee','Integration Bee'],['guest-speaker','Guest Speaker'],['faculty-lecture','Faculty Lecture']]],
+  ['Information',[['rules','Rules'],['scheduling','Schedule'],['resources','Resources'],['sponsors','Sponsors'],['contact','Contact']]],
 ];
 await fs.mkdir('dist',{recursive:true});
 await fs.cp('public','dist',{recursive:true});
