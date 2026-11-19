@@ -1,56 +1,25 @@
-<div class="text-block"><h1>Register for CMM 2027</h1></div><figure><img src="/assets/images/006423_f4139e738d1c42229b305adfdcfaee76~mv2.jpg" alt="Beckman Auditorium at Caltech" loading="lazy"></figure>
-<div class="text-block"><p class="event-summary"><strong>Caltech Math Meet 2027 will take place on January 30th, 2027.</strong></p>
-
-<p class="event-summary"><strong>Registration is open from now until November 13th.</strong></p></div><a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSdIQS4EfbDOA_ig8ZYB8Zj_7YJd_bU6fUq5n3dyaEpfqbzDLA/viewform?usp=dialog">In-Person Registration</a>
-<div class="text-block"><p>Registration for CMM 2026 is now open through Friday, November 13th.</p>
-
-
-
-
-
-
-
-<p>CMM's in-person competition consists of the following:</p>
-
-
-
-<ul>
-<li>
-<p>Team Round (in-person)</p>
-</li>
-<li>
-<p>Guts Round (in-person) (note that we have replaced Power with Guts due to AI reasons)</p>
-</li>
-<li>
-<p>Individual Round (in-person)</p>
-</li>
-<li>
-<p>All other optional in-person events (Integration Bee, Admissions event, Math talk)</p>
-</li>
-<li>
-<p>Breakfast and Lunch will be provided, as well as t-shirts and other goods from our sponsors.</p>
-</li>
-</ul>
-
-
-
-<p>We ask that, if possible, a coach, that is a legal guardian, fill out the sign up for each team, and accompany the students of the team to the competition if possible.</p>
-
-
-
-<p><strong>If your team is selected, then payment will be due by December 1st. Each team will cost $120 and each individual costs $20. Payment instructions are <a href="/payment-instructions/">here</a>.</strong></p>
-
-
-
-<p>The top 10 teams from CMM 2026 will be guaranteed spots, but they still must register before the deadline. They are:</p>
-
-
-
-<p>AlphaStar Academy: 3 Teams<br>
-Random Math: 2 Teams<br>
-Austin Math Circle: 1 Team<br>
-University High School: 1 Team<br>
-Gunn Math Circle: 1 Team<br>
-The Bishop's School: 1 Team<br>
-Areteem Institute: 1 Team</p></div>
-<a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSdIQS4EfbDOA_ig8ZYB8Zj_7YJd_bU6fUq5n3dyaEpfqbzDLA/viewform?usp=dialog">In-Person Registration</a>
+<section class="registration-banner">
+  <img src="/assets/images/006423_f4139e738d1c42229b305adfdcfaee76~mv2.jpg" alt="" fetchpriority="high">
+  <h1>Register for CMM {{event.year}}</h1>
+  <div class="registration-banner-dates">
+    <p class="event-summary"><strong>Caltech Math Meet {{event.year}} will take place on {{event.competitionDateOrdinal}}, {{event.year}}.</strong></p>
+    <p class="event-summary"><strong>Registration is now closed.</strong></p>
+  </div>
+</section>
+<div class="registration-body">
+  <div class="registration-copy">
+    <p>The registration form linked below is <strong>closed</strong> to all teams and individuals who <strong>have not</strong> been accepted. Teams and individuals who <strong>were</strong> accepted have through the end of December to edit their registration information, including team rosters, t-shirt sizes, lunch orders, and coach information.</p>
+    <a class="button" href="{{event.registrationUrl}}" target="_blank" rel="noopener noreferrer">Registration <span aria-hidden="true">&#8250;</span></a>
+    <p>CMM {{event.year}} consists of the following rounds, all occurring in-person.</p>
+    <ul>
+      <li>Team Round (olympiad-style)</li>
+      <li>Guts Round (note that this has replaced the Power Round)</li>
+      <li>Individual Round</li>
+      <li>All other optional events (Integration Bee, Admissions event, Math talk)</li>
+      <li>Breakfast and Lunch will be provided, as well as t-shirts and other goods from our sponsors.</li>
+    </ul>
+    <p>You can read more about the rounds of the competition <a href="/rules/">here</a>.</p>
+    <p>We ask that, if possible, a coach, that is a legal guardian, fill out the sign up for each team, and accompany the students of the team to the competition if possible.</p>
+    <p><strong>Payment for accepted teams and individuals is due by {{event.paymentDeadlineOrdinal}}. Each team will cost {{event.teamFeeWithoutTrailingZeros}} and each individual costs {{event.individualFeeWithoutTrailingZeros}}. Payment instructions are <a href="/payment-instructions/">here</a>.</strong></p>
+  </div>
+</div>

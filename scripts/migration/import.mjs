@@ -173,7 +173,9 @@ for (const page of pages) {
   // Keep table headers meaningful after removing Wix presentation markup.
   dom('thead td').each((_,e)=>{e.tagName='th';dom(e).attr('scope','col');});
   html = dom.html().replace(/[ \t]+$/gm,'').trim();
-  await fs.writeFile(`content/pages/${page.slug.replaceAll('/','__') || 'home'}.html`,html+'\n');
+  const output = `content/pages/${page.slug || 'home'}.html`;
+  await fs.mkdir(path.dirname(output), { recursive: true });
+  await fs.writeFile(output, html + '\n');
   manifest.push({slug:page.slug,title:page.title || `${page.text[0]} | Caltech Math Meet`,source:page.url});
 }
 // Preserve the original logo and favicon locally, too.

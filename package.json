@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Caltech Math Meet static website",
   "scripts": {
+    "start": "npm run build && npm run preview",
     "build": "node scripts/build.mjs",
     "check": "node scripts/check.mjs",
     "preview": "node scripts/serve.mjs",
@@ -19,7 +20,7 @@
   "bugs": {
     "url": "https://github.com/26anikar/cmm-website/issues"
   },
-  "homepage": "https://github.com/26anikar/cmm-website#readme",
+  "homepage": "https://26anikar.github.io/cmm-website/",
   "devDependencies": {
     "@playwright/test": "^1.63.0",
     "cheerio": "^1.2.0",

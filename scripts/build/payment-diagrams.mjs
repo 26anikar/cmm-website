@@ -15,11 +15,9 @@ export function addPaymentDiagrams($) {
       label.appendTo(canvas);
     });
     figure.addClass(`payment-diagram ${type}-diagram`).append(canvas);
-    const caption=$('<figcaption></figcaption>').text(type==='check'?'Example check — enter your date, payment amount, and signature in the remaining fields.':'Example envelope — use your own name and return address.');
-    figure.append(caption);
     figure.wrap('<section class="payment-example"></section>');
     const section=figure.parent();
-    section.prepend($('<h3></h3>').text(type==='check'?'1. Write your check':'2. Address your envelope'));
+    section.prepend($('<h3></h3>').text(type==='check'?'Write your check':'Address your envelope'));
     details.appendTo(section);
     examples.push(section);
   });

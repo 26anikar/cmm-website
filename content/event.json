@@ -1,0 +1,14 @@
+{
+  "competitionDate": "2027-01-23",
+  "fridayEventDate": "2027-01-22",
+  "registrationDeadline": "2026-11-13",
+  "selectionDate": "2026-11-15",
+  "paymentDeadline": "2026-12-01",
+  "registrationOpen": true,
+  "registrationUrl": "https://docs.google.com/forms/d/e/1FAIpQLSdIQS4EfbDOA_ig8ZYB8Zj_7YJd_bU6fUq5n3dyaEpfqbzDLA/viewform?usp=dialog",
+  "paymentUrl": "https://sfe.jotform.com/263016645964968",
+  "mailingListFormUrl": "",
+  "contactEmail": "cmm-help@caltech.edu",
+  "teamFee": 120,
+  "individualFee": 20
+}

@@ -9,6 +9,7 @@ let linkCount=0,pdfs=0;
 for(const p of site.pages){
   const html=await fs.readFile(path.join('dist',p.slug,'index.html'),'utf8');
   const $=load(html);
+  assert.ok(!html.includes('{{event.'), `${p.slug}: unresolved annual setting`);
   assert.equal($('h1').length,1,`${p.slug}: expected one main heading`);
   assert.ok($('main').text().trim().length>10,`${p.slug}: missing content`);
   assert.equal($('script[src*="wix"],iframe[src*="wix"]').length,0);
