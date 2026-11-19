@@ -82,10 +82,8 @@ main { flex: 1; }
 .page-content .archive-grid p { flex-shrink: 0; font-size: 14px; }
 .page-content[data-page^="problems/"] .page-title h1 { font-size: clamp(32px,4vw,56px); }
 .page-content[data-page^="problems/"] .page-body>h2,
-.page-content[data-page="results"] .page-body h2,
-.page-content[data-page="scheduling"] .page-body h2 { text-align: center; }
+.page-content[data-page="results"] .page-body h2 { text-align: center; }
 .page-content[data-page^="problems/"] .card-grid { grid-template-columns: repeat(2,minmax(0,1fr)); text-align: center; }
-.page-content[data-page="scheduling"] .table-scroll { margin-bottom: 48px; }
 
 /* Photo-led pages keep the same full-width treatment as the homepage. */
 .page-title-photo {
@@ -219,10 +217,50 @@ main { flex: 1; }
 .page-content .button { border-color: #c99a19; font-family: var(--serif); }
 .page-content .notice,.page-content .check-details { background: #f8edc9; }
 .page-content[data-page="registration"] .registration-body { font-family: var(--serif); }
-.page-content[data-page="rules"] .page-title-photo { background: #3f0500; }
-.page-content[data-page="rules"] .page-title-photo h1 { color: #fff; }
-.page-content[data-page="rules"] .page-title-photo:after { background: #3f0500b3; }
-.page-content[data-page="rules"] .page-title-lead { font-family: 'Sora',var(--sans); }
+.page-content[data-page="rules"] .page-title-photo {
+  min-height: clamp(460px, 50vw, 720px);
+  justify-content: flex-start;
+  padding-top: clamp(54px, 6vw, 96px);
+  padding-bottom: 22px;
+  gap: clamp(24px, 4vw, 72px);
+  background: #3f0500;
+}
+.page-content[data-page="rules"] .page-title-photo h1 {
+  color: #fff;
+  font-size: clamp(38px, 7.5vw, 110px);
+}
+.page-content[data-page="rules"] .page-title-photo:after { background: #3f0500dc; }
+.page-content[data-page="rules"] .page-title-lead {
+  max-width: 900px;
+  font: 600 clamp(16px, 2vw, 28px)/1.75 'Sora', var(--sans);
+}
+.page-content[data-page="rules"] .page-photo-credit {
+  align-self: flex-end;
+  margin: auto 0 0;
+  font: 400 .875rem/1.5 'Sora', var(--sans);
+  text-align: right;
+}
+.page-content[data-page="rules"] .page-body {
+  max-width: none;
+  padding: 0 0 48px;
+}
+.rules-section { padding: 0 24px; }
+.rules-section:first-child { padding-block: 42px 28px; }
+.rules-section:nth-child(2),
+.rules-section:last-child {
+  padding-top: 36px;
+  border-top: 2px solid #c99a19;
+}
+.rules-section:last-child { margin-top: 56px; }
+.rules-section > .text-block {
+  max-width: 920px;
+  margin-inline: auto;
+}
+.page-content .rules-section h2 {
+  margin: 0 0 20px;
+  font-size: clamp(26px, 3.5vw, 48px);
+}
+.rules-section + .rules-section:not(:last-child):not(:nth-child(2)) { margin-top: 48px; }
 
 /* These sections use the original site's dark burgundy backgrounds. */
 .page-content:is([data-page="problems"],[data-page^="problems/"],[data-page="p10-fall"],[data-page="resources"],[data-page="results"],[data-page="scheduling"],[data-page="contact"],[data-page="sponsors"],[data-page="404"]) {
