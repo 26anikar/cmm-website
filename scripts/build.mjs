@@ -9,14 +9,17 @@ import { applyPageLayout } from './build/page-layout.mjs';
 import { eventValues, renderEventContent } from './build/event-content.mjs';
 const settings = JSON.parse(await fs.readFile('content/event.json', 'utf8'));
 const event = eventValues(settings);
-const embedUrl = settings.mailingListFormUrl;
-if (embedUrl && !/^https:\/\/docs\.google\.com\/forms\/d\/(?:e\/)?[A-Za-z0-9_-]+\/viewform(?:\?[^#]*)?$/.test(embedUrl)) {
-  throw new Error('content/event.json: mailingListFormUrl must be a Google Forms embed URL or blank.');
+const mailingListFormUrl = settings.mailingListFormUrl;
+if (mailingListFormUrl && !/^https:\/\/(?:docs\.google\.com\/forms\/d\/(?:e\/)?[A-Za-z0-9_-]+\/viewform|forms\.gle\/[A-Za-z0-9_-]+)(?:\?[^#]*)?$/.test(mailingListFormUrl)) {
+  throw new Error('content/event.json: mailingListFormUrl must be a Google Forms responder URL or blank.');
 }
 const site = JSON.parse(await fs.readFile('content/site.json','utf8'));
 const base = (process.env.BASE_PATH ?? '/cmm-website').replace(/\/$/,'');
 const siteUrl = process.env.SITE_URL || site.url;
 const esc = s => String(s).replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;');
+const mailingListButton = mailingListFormUrl
+  ? `<a class="mailing-list-button" href="${esc(mailingListFormUrl)}">Join our Mailing List!</a>`
+  : '<button class="mailing-list-button" type="button" disabled title="Signup form coming soon">Join our Mailing List!</button>';
 const url = p => `${base}${p}`;
 const styleVersion=createHash('sha256').update(await fs.readFile('public/assets/site.css')).digest('hex').slice(0,10);
 const pageStyleVersion=createHash('sha256').update(await fs.readFile('public/assets/pages.css')).digest('hex').slice(0,10);
@@ -52,14 +55,6 @@ for (const page of [...site.pages,{slug:'404',title:'Page not found | Caltech Ma
   });
   if (!page.slug) {
     addHomeSlideshow($);
-    if (embedUrl) {
-      const googleUrl = new URL(embedUrl);
-      googleUrl.searchParams.set('embedded', 'true');
-      const frame = $('<iframe title="CMM mailing list Google Form" loading="lazy"></iframe>').attr('src', googleUrl.href);
-      googleUrl.searchParams.delete('embedded');
-      const link = $('<a target="_blank" rel="noopener noreferrer">Open the Google Form in a new tab</a>').attr('href', googleUrl.href);
-      $('#mailing-list-embed').empty().append(frame, $('<p></p>').append(link));
-    }
   }
   if (page.slug === 'payment-instructions') {
     if (event.paymentUrl) {
@@ -89,7 +84,7 @@ for (const page of [...site.pages,{slug:'404',title:'Page not found | Caltech Ma
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${esc(page.title)}</title><meta name="description" content="${esc(description)}"><link rel="canonical" href="${canonical}"><meta property="og:title" content="${esc(page.title)}"><meta property="og:description" content="${esc(description)}"><meta property="og:type" content="website"><meta property="og:url" content="${canonical}"><meta name="theme-color" content="#800d00"><link rel="icon" href="${url(site.favicon)}"><link rel="stylesheet" href="${url('/assets/site.css')}?v=${styleVersion}"><link rel="stylesheet" href="${url('/assets/pages.css')}?v=${pageStyleVersion}"><script src="${url('/assets/site.js')}?v=${scriptVersion}" defer></script></head>
 <body><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="header-inner"><a class="brand" href="${url('/')}" aria-label="Caltech Math Meet home"><img src="${url(optimized.get(site.logo)?.url || site.logo)}" alt="Caltech Math Meet" width="115" height="46"></a><button class="menu-toggle" aria-controls="navigation" aria-expanded="false">Menu <span aria-hidden="true">☰</span></button><nav id="navigation" aria-label="Main navigation"><a class="home-link" href="${url('/')}"${current('')}>Home</a>${nav}</nav></div></header>
 <main id="main" class="${page.slug?'page-content':'home-content'}" data-page="${esc(page.slug || 'home')}" tabindex="-1">${$.html()}</main>
-<footer class="site-footer"><div class="footer-contact-details"><a class="footer-brand" href="${url('/')}" aria-label="Caltech Math Meet home"><img src="${url(optimized.get(site.logo)?.url || site.logo)}" alt="Caltech Math Meet" width="130" height="52" loading="lazy"></a><a href="${url('/contact/')}">Questions? Contact Us</a><a href="mailto:${esc(event.contactEmail)}">${esc(event.contactEmail)}</a></div>${page.slug === '' ? '<a class="footer-mailing" href="#mailing-list">Subscribe to our Mailing List!</a>' : ''}</footer></body></html>`;
+<footer class="site-footer"><div class="footer-contact-details"><a class="footer-brand" href="${url('/')}" aria-label="Caltech Math Meet home"><img src="${url(optimized.get(site.logo)?.url || site.logo)}" alt="Caltech Math Meet" width="130" height="52" loading="lazy"></a><a href="${url('/contact/')}">Questions? Contact Us</a><a href="mailto:${esc(event.contactEmail)}">${esc(event.contactEmail)}</a></div></footer>${mailingListButton}</body></html>`;
   const file = page.slug==='404'?'dist/404.html':path.join('dist',page.slug,'index.html');
   await fs.mkdir(path.dirname(file),{recursive:true});await fs.writeFile(file,html);
 }

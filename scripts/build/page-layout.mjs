@@ -7,20 +7,9 @@ export function applyPageLayout($, slug) {
 
   if (slug === 'payment-instructions') title.append($('.payment-intro').remove());
 
-  if (slug === 'rules') {
-    const photo = $('figure').first();
-    photo.find('img').attr({alt: 'The Ronald and Maxine Linde Hall of Mathematics and Physics at Caltech', loading: 'eager'});
-    title.addClass('page-title-photo').prepend(photo.find('img').remove());
-    photo.remove();
-    const introduction = $('.text-block').filter((_, e) => $(e).find('p').length > 0).first();
-    title.append(introduction.remove().addClass('page-title-lead'));
-    const credit = $('.text-block').filter((_, e) => $(e).text().includes('Source: Randall Howard')).first();
-    title.append(credit.remove().addClass('page-photo-credit'));
-  }
-
   if (slug === 'sponsors') groupSponsors($);
 
-  // Remove only empty wrappers left behind when the title/photo is moved.
+  // Remove only empty wrappers left behind when the title is moved.
   $('.text-block').filter((_, e) => !$(e).text().trim() && !$(e).children().length).remove();
   const body = $('<div class="page-body"></div>').append($.root().contents());
   $.root().append(title, body);
