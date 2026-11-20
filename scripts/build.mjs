@@ -18,8 +18,8 @@ const base = (process.env.BASE_PATH ?? '/cmm-website').replace(/\/$/,'');
 const siteUrl = process.env.SITE_URL || site.url;
 const esc = s => String(s).replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;');
 const mailingListButton = mailingListFormUrl
-  ? `<a class="mailing-list-button" href="${esc(mailingListFormUrl)}">Join our Mailing List!</a>`
-  : '<button class="mailing-list-button" type="button" disabled title="Signup form coming soon">Join our Mailing List!</button>';
+  ? `<a class="mailing-list-button" href="${esc(mailingListFormUrl)}">Join Mailing List</a>`
+  : '<button class="mailing-list-button" type="button" disabled title="Signup form coming soon">Join Mailing List</button>';
 const url = p => `${base}${p}`;
 const styleVersion=createHash('sha256').update(await fs.readFile('public/assets/site.css')).digest('hex').slice(0,10);
 const pageStyleVersion=createHash('sha256').update(await fs.readFile('public/assets/pages.css')).digest('hex').slice(0,10);
