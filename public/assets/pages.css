@@ -412,14 +412,15 @@ main { flex: 1; }
 .registration-copy li { margin: 0; }
 .registration-copy a:not(.button) { color: inherit; font-weight: 700; }
 .registration-copy > p:last-child { margin-bottom: 0; }
-.page-content .registration-copy .button {
+.registration-copy > p:first-child { margin-bottom: 16px; }
+.page-content :is(.registration-copy, .payment-form-action) .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  width: min(100%, 340px);
-  margin: 0 0 30px;
+  width: min(100%, 14rem);
+  margin-inline: 0;
 }
+.page-content .registration-copy .button { margin-block: 0 16px; }
 .payment-intro {
   max-width: 900px;
   margin: 24px auto 0;
@@ -445,7 +446,6 @@ main { flex: 1; }
   margin: 18px 0 32px;
 }
 .payment-form-action { text-align: center; }
-.payment-form-action .button { margin-inline: 0; min-width: min(14rem, 100%); }
 .payment-examples .payment-example h3 {
   font-family: 'Sora', var(--sans);
   font-size: 1rem;
