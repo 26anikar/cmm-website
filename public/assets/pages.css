@@ -103,17 +103,6 @@ main { flex: 1; }
 .page-content[data-page="rules"] h2,
 .page-content[data-page="payment-instructions"] h2,
 .page-content[data-page="integration-bee"] h2 { font-family: 'Sora',var(--sans); }
-.page-content .registration-banner h1 { font-family: 'Sora',var(--sans); font-size: clamp(42px,6.8vw,100px); text-shadow: 0 3px 4px #0008; }
-.registration-body { font-family: var(--sans); font-size: 18px; line-height: 1.75; }
-.registration-copy { max-width: 920px; }
-.registration-copy > p:first-child { margin-bottom: 32px; }
-.registration-copy .button {
-  width: 364px;
-  min-width: 0;
-  margin-bottom: 32px;
-  letter-spacing: .08em;
-}
-
 
 /* Center short information pages and the original pair of Discord links. */
 .page-content:is([data-page="contact"],[data-page="integration-bee"]) .page-body { text-align: center; }
@@ -188,8 +177,6 @@ main { flex: 1; }
   .page-content .problem-table :is(th,td) { padding: 12px 10px; }
   .page-content[data-page^="problems/"] .card-grid,.sponsor-grid { grid-template-columns: 1fr; }
   .page-title-photo { padding: 60px 20px 36px; gap: 24px; }
-  .page-content .registration-banner h1 { font-size: clamp(38px,10vw,64px); }
-  .registration-body { font-size: 16px; }
   .sponsor-card { padding: 22px; }
   .page-content .math-example { padding: 20px 0; }
 }
@@ -216,7 +203,6 @@ main { flex: 1; }
 .page-content .page-body :is(h2,h3) { font-family: var(--serif); }
 .page-content .button { border-color: #c99a19; font-family: var(--serif); }
 .page-content .notice,.page-content .check-details { background: #f8edc9; }
-.page-content[data-page="registration"] .registration-body { font-family: var(--serif); }
 .page-content[data-page="rules"] .page-title-photo {
   min-height: clamp(460px, 50vw, 720px);
   justify-content: flex-start;
@@ -460,15 +446,46 @@ main { flex: 1; }
   color: var(--cmm-gold);
 }
 
-[data-page="registration"] .registration-banner {
-  background: var(--cmm-red);
+.registration-banner {
+  padding: clamp(42px, 6vw, 80px) 24px clamp(28px, 4vw, 50px);
+  text-align: center;
+  border-bottom: 1px solid var(--cmm-border);
 }
-.page-content[data-page="registration"] .registration-body,
+.page-content .registration-banner h1 {
+  margin: 0 auto 24px;
+  font: 700 clamp(36px, 6.7vw, 92px)/1.15 'Sora', var(--sans);
+}
+.registration-banner .event-summary {
+  margin: 8px auto 0;
+  font: 600 clamp(1rem, 2.3vw, 1.55rem)/1.55 'Sora', var(--sans);
+  text-wrap: balance;
+}
+.registration-body {
+  padding: clamp(32px, 5vw, 60px) 24px 48px;
+  text-align: center;
+  font: clamp(1rem, 1.4vw, 1.2rem)/1.7 var(--serif);
+}
+.registration-copy { max-width: 920px; margin: auto; }
+.registration-copy p,
+.registration-copy ul { margin: 0 0 30px; }
+.registration-copy ul { padding-left: 24px; text-align: left; }
+.registration-copy li { margin: 0; }
+.registration-copy a:not(.button) { color: inherit; font-weight: 700; }
+.registration-copy > p:last-child { margin-bottom: 0; }
+.page-content .registration-copy .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: min(100%, 340px);
+  margin: 0 0 30px;
+  color: var(--ink);
+  background: var(--cmm-gold);
+  border-color: #9d8035;
+}
+.page-content .registration-copy .button:hover { background: #dbc37c; }
 .page-content[data-page="payment-instructions"] {
   background: #f1e3b5;
-}
-.page-content[data-page="registration"] .registration-banner .event-summary {
-  font-family: 'Sora', var(--sans);
 }
 .page-content[data-page="payment-instructions"] .page-title {
   background: transparent;

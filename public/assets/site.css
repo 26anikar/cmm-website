@@ -101,29 +101,6 @@
 @media(max-width:650px){.site-footer{padding:26px 20px;font-size:16px}.site-footer .footer-mailing{padding:12px 22px}}
 @media print{.site-footer{display:none}}
 
-/* Registration follows the original photo banner and centered gold content. */
-.page-content[data-page="registration"]{max-width:none;padding:0;background:#f1e4b5}
-.page-content[data-page="registration"]>.breadcrumbs{display:none}
-.registration-banner{position:relative;isolation:isolate;overflow:hidden;min-height:665px;padding:127px 24px 100px;text-align:center;color:#fff}
-.page-content .registration-banner>img{position:absolute;inset:0;left:-24%;z-index:-2;width:144%;max-width:none;height:100%;max-height:none;object-fit:cover;object-position:center}
-.registration-banner:after{content:'';position:absolute;inset:0;z-index:-1;background:#0002}
-.page-content .registration-banner h1{max-width:1250px;margin:0 auto 130px;color:#fff;font-size:clamp(48px,7.64vw,110px);font-weight:700;line-height:1.18;letter-spacing:0;text-shadow:1px 1px #c8c8c8,0 2px #b4b4b4,0 3px #a0a0a0,0 5px 10px #0008}
-.registration-banner-dates{max-width:1200px;margin:auto}
-.registration-banner .event-summary{margin:0;font-size:clamp(22px,2.43vw,35px);line-height:1.8;text-wrap:balance;text-shadow:0 2px 3px #0009}
-.registration-body{padding:96px 24px 32px;color:#191919;font:19px/1.6 var(--serif);text-align:center}
-.registration-copy{max-width:850px;margin:auto}
-.registration-copy p{margin:0 0 30px}
-.registration-copy>p:first-child{margin-bottom:16px}
-.registration-copy .button{display:inline-flex;align-items:center;justify-content:center;gap:12px;width:323px;max-width:100%;margin:0 0 14px;padding:14px 22px;border:2px solid #c99a19;border-radius:999px;background:#7d0900;color:#fff;font:600 19px/1.4 var(--serif);letter-spacing:1px}
-.registration-copy .button:hover{background:#a12516}
-.registration-copy ul{padding-left:34px;margin:0 0 32px;text-align:left}
-.registration-copy li{padding:0;margin:0}
-.registration-copy li p{margin:0}
-.registration-copy a:not(.button){color:inherit;font-weight:700}
-.registration-copy>p:last-child{margin-bottom:0;line-height:1.875}
-@media(max-width:900px){.registration-banner{min-height:560px;padding:100px 24px 80px}.page-content .registration-banner h1{margin-bottom:90px}.registration-body{padding-top:60px}}
-@media(max-width:650px){.registration-banner{min-height:520px;padding:72px 20px 60px}.page-content .registration-banner h1{font-size:clamp(42px,10vw,64px);margin-bottom:60px}.registration-banner .event-summary{font-size:22px;line-height:1.5}.registration-banner .event-summary+.event-summary{margin-top:18px}.registration-body{padding:40px 20px 36px;font-size:16px}.registration-copy .button{font-size:16px;padding:13px 18px}.registration-copy ul{padding-left:23px}.registration-copy li+li{margin-top:6px}}
-
 /* Homepage wrapper for the official Google Form. */
 .mailing-list{background:var(--paper);border-top:1px solid #e3d192;padding:64px 20px}
 .mailing-list-inner{max-width:760px;margin:auto}
