@@ -323,10 +323,6 @@ main { flex: 1; }
 .bee-results dd { margin: 0; font-weight: 650; }
 
 /* Problem archive and competition downloads. */
-.problem-years a > span,
-.problem-links a {
-  font-weight: 700;
-}
 .problem-years,
 .problem-links {
   margin: 0;
